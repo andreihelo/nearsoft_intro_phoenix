@@ -3,6 +3,7 @@ defmodule NearsoftIntroPhoenix.UserSocket do
 
   ## Channels
   # channel "rooms:*", NearsoftIntroPhoenix.RoomChannel
+  channel "rooms:lobby", NearsoftIntroPhoenix.RoomChannel
 
   ## Transports
   transport :websocket, Phoenix.Transports.WebSocket

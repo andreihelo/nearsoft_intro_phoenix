@@ -54,9 +54,18 @@ let socket = new Socket("/socket")
 socket.connect({token: window.userToken})
 
 // Now that you are connected, you can join channels with a topic:
-let channel = socket.channel("topic:subtopic", {})
+let channel = socket.channel("rooms:lobby", {})
+channel.on("ping", payload => {
+  console.log(payload)
+})
+channel.on("shout", payload => {
+  console.log(payload)
+})
 channel.join()
-  .receive("ok", resp => { console.log("Joined successfully", resp) })
+  .receive("ok", resp => {
+    console.log("Joined successfully", resp)
+    // channel.push("hello", {})
+  })
   .receive("error", resp => { console.log("Unable to join", resp) })
 
 export default socket
