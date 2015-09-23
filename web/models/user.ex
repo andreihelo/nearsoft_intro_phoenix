@@ -9,8 +9,8 @@ defmodule NearsoftIntroPhoenix.User do
     timestamps
   end
 
-  @required_fields ~w(name phone age)
-  @optional_fields ~w()
+  @required_fields ~w(name age)
+  @optional_fields ~w(phone)
 
   @doc """
   Creates a changeset based on the `model` and `params`.
